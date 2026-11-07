@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Gallery | Dasola Olanipekun</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0b1f33;
+            --green: #198754;
+            --mint: #20c997;
+            --light-green: #e9f5ef;
+            --light: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--light);
+            color: var(--navy);
+            overflow-x: hidden;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            background: var(--navy);
+            padding: 16px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            font-size: 18px;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            margin: 0 7px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--mint) !important;
+        }
+
+        /* HERO */
+        .gallery-hero {
+            background:
+                linear-gradient(120deg, rgba(11,31,51,0.98),
+                rgba(11,31,51,0.88)),
+                url('images/pond.jpeg') center/cover;
+
+            padding: 90px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-label {
+            color: var(--mint);
+            letter-spacing: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .gallery-hero h1 {
+            font-size: clamp(35px, 5vw, 58px);
+            font-weight: 800;
+            margin: 15px 0;
+        }
+
+        .gallery-hero h1 span {
+            color: var(--mint);
+        }
+
+        .gallery-hero p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #d5dce4;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .hero-line {
+            height: 4px;
+            width: 65px;
+            background: var(--mint);
+            margin: 25px auto;
+            border-radius: 5px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: var(--mint);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* INTRODUCTION */
+        .intro-section {
+            padding: 65px 0 35px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-weight: 800;
+            font-size: 30px;
+        }
+
+        .intro-section p {
+            max-width: 700px;
+            margin: 12px auto;
+            color: #6c757d;
+            line-height: 1.8;
+        }
+
+        .section-line {
+            width: 55px;
+            height: 4px;
+            background: var(--green);
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+
+        /* FILTER BUTTONS */
+        .filter-section {
+            padding: 15px 0 35px;
+        }
+
+        .filter-btn {
+            border: 1px solid #d9e4df;
+            background: white;
+            color: var(--navy);
+            padding: 9px 19px;
+            border-radius: 25px;
+            margin: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--green);
+            color: white;
+            border-color: var(--green);
+        }
+
+        /* GALLERY GRID */
+        .gallery-section {
+            padding: 15px 0 80px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 230px;
+            gap: 18px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #dce5e0;
+            cursor: pointer;
+            box-shadow: 0 5px 18px rgba(11,31,51,0.08);
+            transition: 0.3s;
+        }
+
+        /* Highlight selected photographs */
+        .gallery-item:nth-child(1),
+        .gallery-item:nth-child(8) {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(11,31,51,0.9),
+                transparent 65%
+            );
+            opacity: 0.85;
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+            background: linear-gradient(
+                to top,
+                rgba(11,31,51,0.95),
+                rgba(11,31,51,0.05)
+            );
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            z-index: 2;
+            color: white;
+        }
+
+        .gallery-caption h5 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .gallery-caption p {
+            font-size: 12px;
+            color: #d5dce4;
+            margin: 0;
+        }
+
+        .gallery-tag {
+            display: inline-block;
+            background: var(--mint);
+            color: var(--navy);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .gallery-item.hide {
+            display: none;
+        }
+
+        /* CALL TO ACTION */
+        .gallery-cta {
+            background: var(--light-green);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .gallery-cta h2 {
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .gallery-cta p {
+            color: #596b60;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #071522;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        footer h5 {
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        footer a {
+            color: var(--mint);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* IMAGE MODAL */
+        .modal-content {
+            background: var(--navy);
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .modal-image {
+            width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            background: #071522;
+        }
+
+        .modal-caption {
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 991px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 210px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .gallery-hero {
+                padding: 65px 15px;
+            }
+
+            .gallery-hero h1 {
+                font-size: 36px;
+            }
+
+            .intro-section {
+                padding: 45px 15px 25px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 190px;
+                gap: 12px;
+            }
+
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(8) {
+                grid-column: span 2;
+            }
+
+            .gallery-caption {
+                padding: 12px;
+            }
+
+            .gallery-caption h5 {
+                font-size: 14px;
+            }
+
+            .gallery-caption p {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .gallery-grid {
+                grid-auto-rows: 155px;
+                gap: 9px;
+            }
+
+            .gallery-caption {
+                padding: 8px;
+            }
+
+            .gallery-tag {
+                font-size: 9px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            DASOLA OLANIPEKUN
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="gallery.html"
+                    aria-current="page">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="aquaculture.html">Aquaculture</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="innovation.html">Innovation</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="training.html">Training</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Technology.html">Technology</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<header class="gallery-hero">
+
+    <div class="container">
+
+        <span class="hero-label">MY EXPERIENCES • MY JOURNEY</span>
+
+        <h1>Picture <span>Speaks.</span></h1>
+
+        <div class="hero-line"></div>
+
+        <p>
+            Every picture tells a story. Explore moments from my
+            professional journey, practical experiences, food innovation,
+            aquaculture and continuous learning.
+        </p>
+
+        <a href="#myGallery" class="hero-btn">
+            Explore Gallery &darr;
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- INTRODUCTION -->
+<section class="intro-section" id="myGallery">
+
+    <div class="container">
+
+        <h2>A Glimpse Into My Journey</h2>
+
+        <div class="section-line"></div>
+
+        <p>
+            From hands-on aquaculture activities to food product development
+            and professional training, these moments capture my passion
+            for learning, creativity and making meaningful contributions.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FILTER BUTTONS -->
+<section class="filter-section">
+
+    <div class="container text-center">
+
+        <button class="filter-btn active" data-filter="all">
+            All Experiences
+        </button>
+
+        <button class="filter-btn" data-filter="training">
+            Training & Engagement
+        </button>
+
+        <button class="filter-btn" data-filter="food">
+            Food Innovation
+        </button>
+
+        <button class="filter-btn" data-filter="aqua">
+            Aquaculture
+        </button>
+
+        <button class="filter-btn" data-filter="moments">
+            Personal Moments
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section class="gallery-section">
+
+    <div class="container">
+
+        <div class="gallery-grid" id="galleryGrid">
+
+
+            <!-- TRAINING AND ENGAGEMENT -->
+
+            <div class="gallery-item" data-category="training"
+                data-title="Knowledge Sharing"
+                data-description="Sharing ideas and experiences.">
+
+                <img src="images/talking.jpeg"
+                    alt="Knowledge sharing experience" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">TRAINING</span>
+                    <h5>Knowledge Sharing</h5>
+                    <p>Sharing ideas and experiences.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="training"
+                data-title="Public Engagement"
+                data-description="Communication and professional engagement.">
+
+                <img src="images/talking 2.jpeg"
+                    alt="Public engagement" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">ENGAGEMENT</span>
+                    <h5>Public Engagement</h5>
+                    <p>Communication and interaction.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="training"
+                data-title="Training Experience"
+                data-description="Building knowledge through training.">
+
+                <img src="images/training 1.jpeg"
+                    alt="Training experience" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">TRAINING</span>
+                    <h5>Training Experience</h5>
+                    <p>Learning and development.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="training"
+                data-title="Practical Learning"
+                data-description="A moment from a learning programme.">
+
+                <img src="images/training 2.jpeg"
+                    alt="Practical learning" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">LEARNING</span>
+                    <h5>Practical Learning</h5>
+                    <p>Developing new skills.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="training"
+                data-title="Professional Development"
+                data-description="Continuous learning and growth.">
+
+                <img src="images/training 3.jpeg"
+                    alt="Professional development" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">DEVELOPMENT</span>
+                    <h5>Professional Development</h5>
+                    <p>Growing through experience.</p>
+                </div>
+            </div>
+
+
+            <!-- FOOD INNOVATION -->
+
+            <div class="gallery-item" data-category="food"
+                data-title="Baking"
+                data-description="Exploring baking and food production.">
+
+                <img src="images/baking.jpeg"
+                    alt="Baking experience" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">FOOD INNOVATION</span>
+                    <h5>Baking</h5>
+                    <p>Creativity in food production.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Food Production"
+                data-description="Practical food preparation experience.">
+
+                <img src="images/baking 2.jpeg"
+                    alt="Food production" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">FOOD INNOVATION</span>
+                    <h5>Food Production</h5>
+                    <p>Exploring food preparation.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Snack Production"
+                data-description="Food processing and product presentation.">
+
+                <img src="images/carrying snacks.jpeg"
+                    alt="Snack production" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">VALUE ADDITION</span>
+                    <h5>Snack Production</h5>
+                    <p>Product development and presentation.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Cake Production"
+                data-description="A creative food production experience.">
+
+                <img src="images/cake nurse.JPG"
+                    alt="Cake production" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">BAKING</span>
+                    <h5>Cake Production</h5>
+                    <p>Creativity and presentation.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Cake Presentation"
+                data-description="Food creativity and presentation.">
+
+                <img src="images/cake temi.JPG"
+                    alt="Cake presentation" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">BAKING</span>
+                    <h5>Cake Presentation</h5>
+                    <p>Creative product presentation.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Chin Chin"
+                data-description="An example of a value-added snack product.">
+
+                <img src="images/carry chin chin.jpeg"
+                    alt="Chin chin product" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">VALUE ADDITION</span>
+                    <h5>Chin Chin</h5>
+                    <p>Snack product development.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Fish Products"
+                data-description="Exploring fish-based food products.">
+
+                <img src="images/carry fish.jpeg"
+                    alt="Fish product experience" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">FISH PROCESSING</span>
+                    <h5>Fish Products</h5>
+                    <p>Fish value addition.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Fish Skin Innovation"
+                data-description="Exploring alternative fish products.">
+
+                <img src="images/e-skin.jpeg"
+                    alt="Fish skin innovation" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">INNOVATION</span>
+                    <h5>Fish Skin Innovation</h5>
+                    <p>Exploring alternative products.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Fish Filleting"
+                data-description="Fish processing and preparation.">
+
+                <img src="images/fillets.JPG"
+                    alt="Fish filleting" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">PROCESSING</span>
+                    <h5>Fish Filleting</h5>
+                    <p>Post-harvest processing.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Fish Skin Chips"
+                data-description="Innovative fish-based snack products.">
+
+                <img src="images/fish skin chips.jpeg"
+                    alt="Fish skin chips" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">INNOVATION</span>
+                    <h5>Fish Skin Chips</h5>
+                    <p>Exploring new food products.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Product Packaging"
+                data-description="Packaging and product presentation.">
+
+                <img src="images/packing.jpeg"
+                    alt="Product packaging" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">PACKAGING</span>
+                    <h5>Product Packaging</h5>
+                    <p>Product presentation and packaging.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="food"
+                data-title="Fish Roll"
+                data-description="Fish-based food product development.">
+
+                <img src="images/wrapped fish roll.jpeg"
+                    alt="Wrapped fish roll" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">VALUE ADDITION</span>
+                    <h5>Fish Roll</h5>
+                    <p>Fish-based product development.</p>
+                </div>
+            </div>
+
+
+            <!-- AQUACULTURE -->
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Pond Maintenance"
+                data-description="Practical pond maintenance experience.">
+
+                <img src="images/demudding.jpeg"
+                    alt="Pond maintenance" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">AQUACULTURE</span>
+                    <h5>Pond Maintenance</h5>
+                    <p>Practical farm management.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Feed Formulation"
+                data-description="Exploring fish nutrition and feed formulation.">
+
+                <img src="images/feed formulation.jpeg"
+                    alt="Fish feed formulation" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">FISH NUTRITION</span>
+                    <h5>Feed Formulation</h5>
+                    <p>Fish nutrition and feed production.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Fish Feeding"
+                data-description="Fish feeding and farm management practices.">
+
+                <img src="images/feeding.jpeg"
+                    alt="Fish feeding" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">FARM MANAGEMENT</span>
+                    <h5>Fish Feeding</h5>
+                    <p>Practical feeding activities.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Fish Measurement"
+                data-description="Monitoring fish growth and performance.">
+
+                <img src="images/fish measure.jpeg"
+                    alt="Fish measurement" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">FISH GROWTH</span>
+                    <h5>Fish Measurement</h5>
+                    <p>Growth monitoring and assessment.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Fresh Fish"
+                data-description="Fresh fish production and handling.">
+
+                <img src="images/fresh fish.jpeg"
+                    alt="Fresh fish" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">FISH PRODUCTION</span>
+                    <h5>Fresh Fish</h5>
+                    <p>Fish production and handling.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Pond Systems"
+                data-description="Aquaculture pond infrastructure.">
+
+                <img src="images/pond.jpeg"
+                    alt="Aquaculture pond" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">AQUACULTURE</span>
+                    <h5>Pond Systems</h5>
+                    <p>Fish farming infrastructure.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Fish Farming"
+                data-description="Practical fish farming experience.">
+
+                <img src="images/pond 2.jpeg"
+                    alt="Fish farming pond" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">AQUACULTURE</span>
+                    <h5>Fish Farming</h5>
+                    <p>Practical aquaculture experience.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Fish Scaling"
+                data-description="Fish processing and post-harvest handling.">
+
+                <img src="images/scaling.jpeg"
+                    alt="Fish scaling" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">PROCESSING</span>
+                    <h5>Fish Scaling</h5>
+                    <p>Post-harvest handling.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Water Quality Testing"
+                data-description="Monitoring water quality in aquaculture.">
+
+                <img src="images/water quality.jpeg"
+                    alt="Water quality testing" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">WATER QUALITY</span>
+                    <h5>Water Quality Testing</h5>
+                    <p>Monitoring water conditions.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Water Quality Assessment"
+                data-description="Practical water quality assessment.">
+
+                <img src="images/water quality 2.jpeg"
+                    alt="Water quality assessment" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">WATER QUALITY</span>
+                    <h5>Water Assessment</h5>
+                    <p>Practical water monitoring.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="aqua"
+                data-title="Water Management"
+                data-description="Maintaining suitable aquaculture water conditions.">
+
+                <img src="images/water quality 3.jpeg"
+                    alt="Water management" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">WATER QUALITY</span>
+                    <h5>Water Management</h5>
+                    <p>Maintaining suitable conditions.</p>
+                </div>
+            </div>
+
+
+            <!-- PERSONAL AND PROFESSIONAL MOMENTS -->
+
+            <div class="gallery-item" data-category="moments"
+                data-title="Field Experience"
+                data-description="A memorable moment from my journey.">
+
+                <img src="images/hapa.jpeg"
+                    alt="Personal experience" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">EXPERIENCE</span>
+                    <h5>Field Experience</h5>
+                    <p>Memorable moments.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="moments"
+                data-title="Professional Connections"
+                data-description="A moment from my professional journey.">
+
+                <img src="images/jeff.jpeg"
+                    alt="Professional connections" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">CONNECTIONS</span>
+                    <h5>Professional Connections</h5>
+                    <p>People and shared experiences.</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item" data-category="moments"
+                data-title="Shared Experiences"
+                data-description="A moment with people along my journey.">
+
+                <img src="images/with qudus.jpeg"
+                    alt="Shared experience" loading="lazy">
+
+                <div class="gallery-caption">
+                    <span class="gallery-tag">MEMORIES</span>
+                    <h5>Shared Experiences</h5>
+                    <p>Moments worth remembering.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+<section class="gallery-cta">
+
+    <div class="container">
+
+        <h2>Every Experience Counts.</h2>
+
+        <p>
+            My journey is shaped by curiosity, practical learning,
+            creativity and a desire to keep growing.
+            Thank you for taking a look at my experiences.
+        </p>
+
+        <a href="contact.html" class="hero-btn">
+            Let's Connect &rarr;
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container text-center">
+
+        <h5>DASOLA OLANIPEKUN</h5>
+
+        <p class="small mt-2">
+            Aquaculture | Food Innovation | Technology
+        </p>
+
+        <p class="small">
+            <a href="mailto:dasolagift9@gmail.com">
+                dasolagift9@gmail.com
+            </a>
+        </p>
+
+        <hr class="border-secondary">
+
+        <p class="small mb-0">
+            &copy; 2026 Dasola Olanipekun. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- IMAGE PREVIEW MODAL -->
+<div class="modal fade" id="imageModal" tabindex="-1"
+    aria-labelledby="imageModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header border-0">
+                <h5 class="text-white" id="imageModalLabel">
+                    Gallery Preview
+                </h5>
+
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-0">
+
+                <img src="" id="modalImage"
+                    class="modal-image" alt="Enlarged gallery photograph">
+
+                <div class="modal-caption">
+                    <h5 id="modalTitle"></h5>
+                    <p id="modalDescription" class="mb-0"></p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- BOOTSTRAP JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    // GALLERY FILTER
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener('click', function() {
+
+            const filter = this.getAttribute('data-filter');
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            galleryItems.forEach(item => {
+
+                const category = item.getAttribute('data-category');
+
+                if (filter === 'all' || category === filter) {
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                }
+
+            });
+
+        });
+
+    });
+
+
+    // IMAGE PREVIEW
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+
+    const previewModal = new bootstrap.Modal(imageModal);
+
+    galleryItems.forEach(item => {
+
+        item.addEventListener('click', function() {
+
+            const image = this.querySelector('img');
+
+            modalImage.src = image.src;
+            modalImage.alt = image.alt;
+
+            modalTitle.textContent =
+                this.getAttribute('data-title');
+
+            modalDescription.textContent =
+                this.getAttribute('data-description');
+
+            previewModal.show();
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

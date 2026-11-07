@@ -1,0 +1,847 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dasola Olanipekun | Training & Development</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0b1f33;
+            --green: #198754;
+            --mint: #20c997;
+            --light-green: #e9f5ef;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--background);
+            color: #333;
+        }
+
+        .navbar {
+            background: var(--navy);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            margin-left: 12px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--mint) !important;
+        }
+
+        .hero {
+            background: linear-gradient(
+                rgba(11, 31, 51, 0.85),
+                rgba(11, 31, 51, 0.85)
+            ), url("images/training-banner.jpg") center/cover no-repeat;
+            color: white;
+            padding: 115px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        .section-padding {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            max-width: 720px;
+            margin: auto;
+            color: #6c757d;
+        }
+
+        .highlight {
+            color: var(--green);
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            background: var(--light-green);
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .training-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            padding: 28px;
+            height: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+        }
+
+        .training-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .training-card h5 {
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        .training-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .timeline {
+            border-left: 3px solid var(--green);
+            padding-left: 25px;
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--green);
+            border-radius: 50%;
+            left: -34px;
+            top: 5px;
+        }
+
+        .certificate-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .certificate-card .card-body {
+            padding: 22px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .btn-green {
+            background: var(--green);
+            color: white;
+            padding: 11px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-green:hover {
+            background: #146c43;
+            color: white;
+        }
+
+        .cta {
+            background: var(--navy);
+            color: white;
+            padding: 70px 0;
+        }
+
+        footer {
+            background: #061522;
+            color: white;
+            padding: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-padding {
+                padding: 55px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            Dasola Olanipekun
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="aquaculture.html">Aquaculture</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="innovation.html">Innovation</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="training.html">Training</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Technology.html">Technology</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<header class="hero text-center">
+
+    <div class="container">
+
+        <p class="text-success text-uppercase fw-bold">
+            Learning • Teaching • Growth
+        </p>
+
+        <h1>Training, Learning & Knowledge Sharing</h1>
+
+        <p class="lead mx-auto mt-3" style="max-width: 750px;">
+            Building practical skills, sharing knowledge and embracing
+            opportunities that support personal and professional growth.
+        </p>
+
+        <a href="#experience" class="btn btn-green mt-3">
+            Explore My Journey
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- INTRODUCTION -->
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <img src="images/carry chin chin.jpeg"
+                    alt="Training and learning"
+                    class="training-image shadow">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <p class="text-success fw-bold text-uppercase">
+                    About My Learning Journey
+                </p>
+
+                <h2 class="section-title">
+                    Learning Never Stops
+                </h2>
+
+                <p>
+                    I believe that personal and professional development
+                    comes from a willingness to learn, explore new ideas
+                    and put acquired knowledge into practice.
+                </p>
+
+                <p>
+                    My learning journey has taken me through aquaculture,
+                    fish processing, food product development and
+                    technology.
+                </p>
+
+                <p>
+                    Beyond participating in training programmes,
+                    I also enjoy sharing practical knowledge and
+                    helping others understand new concepts.
+                </p>
+
+                <p class="fw-semibold highlight">
+                    I value every opportunity to learn, teach,
+                    collaborate and grow.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TRAINING EXPERIENCE -->
+<section class="section-padding bg-white" id="experience">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                Practical Experience
+            </p>
+
+            <h2 class="section-title">
+                Training & Facilitation
+            </h2>
+
+            <p class="section-subtitle">
+                Opportunities that have allowed me to develop practical
+                knowledge and share skills with others.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- LASU TRAINING -->
+            <div class="col-lg-6">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-easel"></i>
+                    </div>
+
+                    <span class="badge bg-success mb-3">
+                        Facilitator
+                    </span>
+
+                    <h5>Fish Cookie Production Training</h5>
+
+                    <p class="text-success fw-semibold">
+                        September 2025 | Lagos State University (LASU)
+                    </p>
+
+                    <p>
+                        Facilitated a practical fish-cookie production
+                        training for university students from different
+                        parts of Nigeria during an aquaculture event
+                        at Lagos State University.
+                    </p>
+
+                    <p>
+                        The session focused on demonstrating how fish
+                        can be incorporated into baked products and
+                        sharing practical knowledge about fish
+                        value addition.
+                    </p>
+
+                    <a href="innovation.html"
+                        class="text-success fw-semibold text-decoration-none">
+                        View Product Development
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFERENCE / TUTORING -->
+            <div class="col-lg-6">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <span class="badge bg-success mb-3">
+                        Knowledge Sharing
+                    </span>
+
+                    <h5>Aquaculture Knowledge Sharing</h5>
+
+                    <p class="text-success fw-semibold">
+                        Aquaculture Events & Learning Activities
+                    </p>
+
+                    <p>
+                        I have also had opportunities to tutor and
+                        share knowledge at aquaculture-related
+                        conferences, particularly around aquaculture
+                        and value-chain activities.
+                    </p>
+
+                    <p>
+                        These experiences have strengthened my interest
+                        in practical learning, communication and
+                        knowledge exchange.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROFESSIONAL DEVELOPMENT -->
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                Professional Development
+            </p>
+
+            <h2 class="section-title">
+                Learning Through Industry Exposure
+            </h2>
+
+            <p class="section-subtitle">
+                Programmes and opportunities that have contributed
+                to my professional development.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- TPYP -->
+            <div class="col-lg-6">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-award"></i>
+                    </div>
+
+                    <h5>
+                        Training and Placement for Young Professionals (TPYP)
+                    </h5>
+
+                    <p class="text-success fw-semibold">
+                        Sejfarms Consult Limited
+                    </p>
+
+                    <p>
+                        Participated in the TPYP internship at
+                        Sejfarms Consult Limited, sponsored by the
+                        World Initiative for Soy in Human Health (WISHH).
+                    </p>
+
+                    <p>
+                        I was selected as one of 10 participants
+                        for this opportunity.
+                    </p>
+
+                    <span class="badge bg-success">
+                        WISHH-Sponsored Internship
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- GESP -->
+            <div class="col-lg-6">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+
+                    <h5>
+                        Girls Education and Skills Partnership (GESP)
+                    </h5>
+
+                    <p class="text-success fw-semibold">
+                        Yaba College of Technology
+                    </p>
+
+                    <p>
+                        Completed the UNICEF-sponsored Girls Education
+                        and Skills Partnership programme at YabaTech.
+                    </p>
+
+                    <p>
+                        I was recognised as one of the outstanding
+                        students in the programme and received a
+                        laptop in recognition of my performance.
+                    </p>
+
+                    <span class="badge bg-success">
+                        Outstanding Student Recognition
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TECHNOLOGY TRAINING -->
+<section class="section-padding bg-white">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <p class="text-success fw-bold text-uppercase">
+                    Exploring New Skills
+                </p>
+
+                <h2 class="section-title">
+                    Technology & Digital Skills
+                </h2>
+
+                <p>
+                    My interest in learning has also extended into
+                    technology. I have taken steps to build my
+                    knowledge of frontend development and digital skills.
+                </p>
+
+                <p>
+                    Through training with Techcrush and TS Academy,
+                    I have gained exposure to frontend development,
+                    including HTML, CSS and Bootstrap.
+                </p>
+
+                <p>
+                    I continue to practise and improve my skills
+                    through personal projects and hands-on learning.
+                </p>
+
+                <a href="Technology.html" class="btn btn-green mt-2">
+                    Explore My Technology Journey
+                </a>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <img src="images/technology-training.jpg"
+                    alt="Technology training"
+                    class="training-image shadow">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LEARNING APPROACH -->
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                My Approach
+            </p>
+
+            <h2 class="section-title">
+                How I Learn and Grow
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-book"></i>
+                    </div>
+
+                    <h5>Continuous Learning</h5>
+
+                    <p class="text-muted">
+                        Staying curious, exploring new areas
+                        and being open to learning from others.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-tools"></i>
+                    </div>
+
+                    <h5>Practical Application</h5>
+
+                    <p class="text-muted">
+                        Applying what I learn through hands-on
+                        activities, experiments and personal projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-chat-dots"></i>
+                    </div>
+
+                    <h5>Sharing Knowledge</h5>
+
+                    <p class="text-muted">
+                        Communicating ideas, demonstrating skills
+                        and supporting other people's learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATES -->
+<section class="section-padding bg-white">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                Achievements & Recognition
+            </p>
+
+            <h2 class="section-title">
+                Certificates & Training Highlights
+            </h2>
+
+            <p class="section-subtitle">
+                A place to showcase certificates, programme
+                photographs and recognition received along the way.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="certificate-card">
+
+                    <img src="images/gesp-certificate.jpg"
+                        alt="GESP certificate">
+
+                    <div class="card-body">
+
+                        <h5 class="fw-bold">
+                            Girls Education and Skills Partnership
+                        </h5>
+
+                        <p class="text-muted mb-0">
+                            UNICEF-sponsored programme at YabaTech.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="certificate-card">
+
+                    <img src="images/tpyp-certificate.jpg"
+                        alt="TPYP certificate">
+
+                    <div class="card-body">
+
+                        <h5 class="fw-bold">
+                            TPYP Internship
+                        </h5>
+
+                        <p class="text-muted mb-0">
+                            WISHH-sponsored internship at
+                            Sejfarms Consult Limited.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="certificate-card">
+
+                    <img src="images/frontend-certificate.jpg"
+                        alt="Frontend development certificate">
+
+                    <div class="card-body">
+
+                        <h5 class="fw-bold">
+                            Frontend Development Training
+                        </h5>
+
+                        <p class="text-muted mb-0">
+                            Technology training and skill development.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta text-center">
+
+    <div class="container">
+
+        <h2 class="fw-bold">
+            Learning, Growing and Sharing
+        </h2>
+
+        <p class="mt-3 mb-4">
+            I am open to learning opportunities, training,
+            collaborations and professional connections.
+        </p>
+
+        <a href="contact.html" class="btn btn-green">
+            Let's Connect
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="text-center">
+
+    <div class="container">
+
+        <p class="mb-1">
+            &copy; 2026 Dasola Olanipekun. All Rights Reserved.
+        </p>
+
+        <small class="text-white-50">
+            Learning | Training | Knowledge Sharing
+        </small>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,892 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dasola Olanipekun | Aquaculture & Food Innovation</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0b1f33;
+            --green: #198754;
+            --mint: #20c997;
+            --light-green: #e9f5ef;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--background);
+            color: #333;
+        }
+
+        .navbar {
+            background: var(--navy);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            margin-left: 12px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--mint) !important;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(11, 31, 51, 0.85),
+                        rgba(11, 31, 51, 0.85)),
+                        url("images/pond.jpeg") center/cover no-repeat;
+            color: white;
+            padding: 110px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: 75px 0;
+        }
+
+        .highlight {
+            color: var(--green);
+        }
+
+        .info-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            background: var(--light-green);
+            color: var(--green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 12px;
+            text-align: center;
+            height: 100%;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+        }
+
+        .stat-box h3 {
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            height: 100%;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--green);
+        }
+
+        .experience-card h5 {
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .research-box {
+            background: var(--light-green);
+            border-left: 5px solid var(--green);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .innovation-box {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            height: 100%;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+        }
+
+        .innovation-box i {
+            color: var(--green);
+            font-size: 30px;
+        }
+
+        .cta {
+            background: var(--navy);
+            color: white;
+            padding: 65px 0;
+        }
+
+        .btn-green {
+            background: var(--green);
+            color: white;
+            padding: 11px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-green:hover {
+            background: #146c43;
+            color: white;
+        }
+
+        footer {
+            background: #061522;
+            color: white;
+            padding: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 75px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-padding {
+                padding: 55px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Dasola Olanipekun</a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="aquaculture.html">Aquaculture</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="innovation.html">Innovation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="training.html">Training</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Technology.html">Technology</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<header class="hero text-center">
+    <div class="container">
+        <p class="text-uppercase text-success fw-bold">
+            My Professional Journey
+        </p>
+
+        <h1>Aquaculture, Research & Food Innovation</h1>
+
+        <p class="lead mt-3 mx-auto" style="max-width: 750px;">
+            Exploring sustainable aquaculture, gaining practical industry
+            experience and creating new possibilities through fish-based
+            food products.
+        </p>
+
+        <a href="#experience" class="btn btn-green mt-3">
+            Explore My Experience
+        </a>
+    </div>
+</header>
+
+
+<!-- ABOUT ME -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+                <img src="images/pond 2.jpeg"
+                    alt="Aquaculture practical experience"
+                    class="img-fluid rounded shadow">
+            </div>
+
+            <div class="col-lg-6">
+                <p class="text-success fw-bold text-uppercase">
+                    About My Background
+                </p>
+
+                <h2 class="section-title">
+                    A Passion for Aquaculture and Value Addition
+                </h2>
+
+                <p>
+                    I am an Aquaculture graduate with an interest
+                    in fish production, processing, research and the development
+                    of innovative fish-based food products.
+                </p>
+
+                <p>
+                    My academic background and practical experiences have
+                    helped me develop an understanding of different aspects
+                    of aquaculture, from fish production and management to
+                    processing and product development.
+                </p>
+
+                <p>
+                    I am particularly interested in exploring ways to add
+                    value to fish, improve its utilisation and create
+                    products that appeal to different consumers.
+                </p>
+
+                <p class="fw-semibold highlight">
+                    My goal is to contribute to a more productive and
+                    innovative aquaculture value chain.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- QUICK FACTS -->
+<section class="pb-5">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-box">
+                    <h3>4.35/5.0</h3>
+                    <p class="mb-0">Graduation CGPA</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-box">
+                    <h3>2019–2024</h3>
+                    <p class="mb-0">University Education</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-box">
+                    <h3>3</h3>
+                    <p class="mb-0">Farm/Industry Experiences</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-box">
+                    <h3>10</h3>
+                    <p class="mb-0">Selected TPYP Participants</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section class="section-padding bg-white" id="experience">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <p class="text-success fw-bold text-uppercase">
+                Learning Through Experience
+            </p>
+
+            <h2 class="section-title">Practical & Industry Experience</h2>
+
+            <p class="section-subtitle">
+                My exposure to fish farming and industry-based learning
+                has strengthened my interest in the aquaculture sector.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- GOLDENGATE -->
+            <div class="col-md-6 col-lg-4">
+                <div class="experience-card">
+                    <div class="icon-box">
+                        <i class="bi bi-water"></i>
+                    </div>
+
+                    <h5>Goldengate Fish Farm</h5>
+
+                    <p class="text-success fw-semibold">
+                        September – October 2024
+                    </p>
+
+                    <p>
+                        Gained practical exposure to fish farming operations
+                        and day-to-day aquaculture activities.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- OTIACS -->
+            <div class="col-md-6 col-lg-4">
+                <div class="experience-card">
+                    <div class="icon-box">
+                        <i class="bi bi-fish"></i>
+                    </div>
+
+                    <h5>OTIACS Fish Farm</h5>
+
+                    <p class="text-success fw-semibold">
+                        October – December 2024
+                    </p>
+
+                    <p>
+                        Further developed my practical understanding of
+                        fish farming through farm-based experience.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- SEJFARMS -->
+            <div class="col-md-6 col-lg-4">
+                <div class="experience-card">
+                    <div class="icon-box">
+                        <i class="bi bi-award"></i>
+                    </div>
+
+                    <h5>Sejfarms Consult Limited</h5>
+
+                    <p class="text-success fw-semibold">
+                        TPYP Internship
+                    </p>
+
+                    <p>
+                        Participated in the Training and Placement for Young
+                        Professionals (TPYP) internship sponsored by the
+                        World Initiative for Soy in Human Health (WISHH).
+                    </p>
+
+                    <p>
+                        I was selected as one of 10 participants for this
+                        internship opportunity.
+                    </p>
+
+                    <span class="badge bg-success">
+                        WISHH-Sponsored Programme
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+<section class="section-padding">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <p class="text-success fw-bold text-uppercase">
+                Areas of Interest & Knowledge
+            </p>
+
+            <h2 class="section-title">Aquaculture Skills</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card info-card shadow-sm h-100 p-3">
+                    <div class="card-body">
+                        <div class="icon-box">
+                            <i class="bi bi-droplet"></i>
+                        </div>
+                        <h5 class="fw-bold">Water Quality Monitoring</h5>
+                        <p class="text-muted">
+                            Understanding the importance of water quality
+                            in maintaining a suitable environment for fish.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card info-card shadow-sm h-100 p-3">
+                    <div class="card-body">
+                        <div class="icon-box">
+                            <i class="bi bi-basket"></i>
+                        </div>
+                        <h5 class="fw-bold">Fish Feeding & Nutrition</h5>
+                        <p class="text-muted">
+                            Knowledge of fish feeding practices and
+                            aquafeed formulation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card info-card shadow-sm h-100 p-3">
+                    <div class="card-body">
+                        <div class="icon-box">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h5 class="fw-bold">Growth Monitoring</h5>
+                        <p class="text-muted">
+                            Fish measurement and growth monitoring
+                            to support production decisions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card info-card shadow-sm h-100 p-3">
+                    <div class="card-body">
+                        <div class="icon-box">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <h5 class="fw-bold">Pond Management</h5>
+                        <p class="text-muted">
+                            Understanding pond preparation, maintenance
+                            and general farm management practices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card info-card shadow-sm h-100 p-3">
+                    <div class="card-body">
+                        <div class="icon-box">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                        <h5 class="fw-bold">Fish Processing</h5>
+                        <p class="text-muted">
+                            Interest and practical exposure in fish
+                            processing and preservation techniques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card info-card shadow-sm h-100 p-3">
+                    <div class="card-body">
+                        <div class="icon-box">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h5 class="fw-bold">Product Development</h5>
+                        <p class="text-muted">
+                            Exploring creative ways to transform fish
+                            into useful and appealing food products.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ACADEMIC RESEARCH -->
+<section class="section-padding bg-white">
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+                <p class="text-success fw-bold text-uppercase">
+                    Academic Background
+                </p>
+
+                <h2 class="section-title">Research Experience</h2>
+
+                <p>
+                    I studied Fisheries and Aquaculture at
+                    Olabisi Onabanjo University, Ogun State,
+                    where I developed an academic foundation
+                    in fisheries, aquaculture and fish production.
+                </p>
+
+                <div class="research-box mt-4">
+                    <p class="text-success fw-bold mb-2">
+                        Undergraduate Research Project
+                    </p>
+
+                    <h5 class="fw-bold">
+                        Shelf Life of Aquafeed Fortified with
+                        Fermented Cassava Waste Water
+                    </h5>
+
+                    <p class="mb-0 text-muted">
+                        My research explored an alternative ingredient
+                        in aquafeed and its relevance to feed quality
+                        and storage.
+                    </p>
+                </div>
+
+                <p class="mt-4 mb-0">
+                    <strong>Institution:</strong> Olabisi Onabanjo University
+                </p>
+
+                <p>
+                    <strong>Degree:</strong> B.Sc. Fisheries and Aquaculture
+                </p>
+            </div>
+
+            <div class="col-lg-6">
+                <img src="images/feed formulation.jpeg"
+                    alt="Aquafeed formulation"
+                    class="img-fluid rounded shadow">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PRODUCT DEVELOPMENT INITIATIVE -->
+<section class="section-padding">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <p class="text-success fw-bold text-uppercase">
+                Creativity Beyond Fish Production
+            </p>
+
+            <h2 class="section-title">
+                My Fish-Based Product Development Initiative
+            </h2>
+
+            <p class="section-subtitle">
+                I am interested in exploring new ways to add value to fish
+                through product development. My initiative focuses on
+                creating different food products that make fish more
+                versatile and appealing to consumers.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="innovation-box">
+                    <i class="bi bi-cookie"></i>
+                    <h5 class="fw-bold mt-3">Fish Cookies</h5>
+                    <p class="text-muted">
+                        Developing cookies enriched with fish to explore
+                        new ways of incorporating fish into snack products.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="innovation-box">
+                    <i class="bi bi-egg-fried"></i>
+                    <h5 class="fw-bold mt-3">Soy Fish Pie</h5>
+                    <p class="text-muted">
+                        Exploring the combination of fish and soy-based
+                        ingredients in a familiar pastry product.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="innovation-box">
+                    <i class="bi bi-grid"></i>
+                    <h5 class="fw-bold mt-3">Fish Crackers</h5>
+                    <p class="text-muted">
+                        A fish-based snack inspired by traditional
+                        prawn crackers.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="innovation-box">
+                    <i class="bi bi-fire"></i>
+                    <h5 class="fw-bold mt-3">Fish Kilishi</h5>
+                    <p class="text-muted">
+                        A fish-based take on the popular Nigerian
+                        kilishi snack.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="innovation-box">
+                    <i class="bi bi-fish"></i>
+                    <h5 class="fw-bold mt-3">Fish Fillets & Steaks</h5>
+                    <p class="text-muted">
+                        Exploring convenient fish cuts that can be
+                        prepared and enjoyed in different ways.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="innovation-box">
+                    <i class="bi bi-box2-heart"></i>
+                    <h5 class="fw-bold mt-3">Smoked Catfish</h5>
+                    <p class="text-muted">
+                        Value addition through fish processing and
+                        preservation for different consumer needs.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="innovation.html" class="btn btn-green">
+                Explore My Product Innovations
+                <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- TRAINING AND KNOWLEDGE SHARING -->
+<section class="section-padding bg-white">
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+                <img src="images/training 3.jpeg"
+                    alt="Fish product development and training"
+                    class="img-fluid rounded shadow">
+            </div>
+
+            <div class="col-lg-6">
+
+                <p class="text-success fw-bold text-uppercase">
+                    Knowledge Sharing
+                </p>
+
+                <h2 class="section-title">
+                    Training & Practical Demonstration
+                </h2>
+
+                <p>
+                    In September 2025, I facilitated a fish-cookie
+                    production training for university students from
+                    different parts of Nigeria during an aquaculture
+                    event at Lagos State University (LASU).
+                </p>
+
+                <p>
+                    This experience gave me an opportunity to share
+                    practical knowledge and demonstrate how fish can
+                    be incorporated into familiar food products.
+                </p>
+
+                <p>
+                    I enjoy learning, creating and sharing knowledge
+                    with others, particularly in aquaculture and
+                    fish value addition.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PHOTO GALLERY -->
+<section class="section-padding">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <p class="text-success fw-bold text-uppercase">
+                A Look at My Journey
+            </p>
+
+            <h2 class="section-title">Practical Moments</h2>
+
+            <p class="section-subtitle">
+                A few glimpses of my exposure to aquaculture,
+                fish processing and product development.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <img src="images/pond.jpeg"
+                    alt="Fish farm pond"
+                    class="gallery-img shadow-sm">
+                <p class="text-center mt-2 fw-semibold">
+                    Fish Farming
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <img src="images/feeding.jpeg"
+                    alt="Fish feeding"
+                    class="gallery-img shadow-sm">
+                <p class="text-center mt-2 fw-semibold">
+                    Fish Feeding
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <img src="images/feed formulation.jpeg"
+                    alt="Feed formulation"
+                    class="gallery-img shadow-sm">
+                <p class="text-center mt-2 fw-semibold">
+                    Feed Formulation
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <img src="images/fillets.JPG"
+                    alt="Fish fillets"
+                    class="gallery-img shadow-sm">
+                <p class="text-center mt-2 fw-semibold">
+                    Fish Fillets
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <img src="images/fresh fish.jpeg"
+                    alt="Fresh fish"
+                    class="gallery-img shadow-sm">
+                <p class="text-center mt-2 fw-semibold">
+                    Fresh Fish
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <img src="images/fish skin chips.jpeg"
+                    alt="Fish skin chips"
+                    class="gallery-img shadow-sm">
+                <p class="text-center mt-2 fw-semibold">
+                    Fish-Based Product Development
+                </p>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="gallery.html" class="btn btn-outline-success">
+                View More Photos
+                <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CALL TO ACTION -->
+<section class="cta text-center">
+    <div class="container">
+
+        <h2 class="fw-bold">
+            Interested in Aquaculture or Fish Product Innovation?
+        </h2>
+
+        <p class="mt-3 mb-4">
+            I am open to opportunities, collaborations,
+            learning and conversations within the aquaculture
+            and food innovation space.
+        </p>
+
+        <a href="contact.html" class="btn btn-green">
+            Get in Touch
+        </a>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="text-center">
+    <div class="container">
+        <p class="mb-1">
+            &copy; 2026 Dasola Olanipekun. All Rights Reserved.
+        </p>
+
+        <small class="text-white-50">
+            Aquaculture | Research | Food Innovation
+        </small>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

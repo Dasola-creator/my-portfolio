@@ -1,0 +1,917 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dasola Olanipekun | Technology & Frontend Development</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0b1f33;
+            --green: #198754;
+            --mint: #20c997;
+            --light-green: #e9f5ef;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--background);
+            color: #333;
+        }
+
+        .navbar {
+            background: var(--navy);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            margin-left: 12px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--mint) !important;
+        }
+
+        .hero {
+            background: linear-gradient(
+                rgba(11, 31, 51, 0.88),
+                rgba(11, 31, 51, 0.88)
+            ), url("images/technology-banner.jpg") center/cover no-repeat;
+            color: white;
+            padding: 120px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        .section-padding {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: #6c757d;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .highlight {
+            color: var(--green);
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            height: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-green);
+            color: var(--green);
+            border-radius: 12px;
+            font-size: 26px;
+            margin-bottom: 18px;
+        }
+
+        .training-card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            height: 100%;
+            border-top: 4px solid var(--green);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .training-card h5 {
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .project-card .card-body {
+            padding: 25px;
+        }
+
+        .project-card h5 {
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        .journey-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .future-box {
+            background: var(--light-green);
+            border-left: 5px solid var(--green);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .btn-green {
+            background: var(--green);
+            color: white;
+            padding: 11px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-green:hover {
+            background: #146c43;
+            color: white;
+        }
+
+        .cta {
+            background: var(--navy);
+            color: white;
+            padding: 70px 0;
+        }
+
+        footer {
+            background: #061522;
+            color: white;
+            padding: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-padding {
+                padding: 55px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            Dasola Olanipekun
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="aquaculture.html">Aquaculture</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="innovation.html">Innovation</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="training.html">Training</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="Technology.html">Technology</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<header class="hero text-center">
+
+    <div class="container">
+
+        <p class="text-success text-uppercase fw-bold">
+            Technology | Creativity | Continuous Learning
+        </p>
+
+        <h1>My Journey Into Technology</h1>
+
+        <p class="lead mx-auto mt-3" style="max-width: 750px;">
+            Exploring frontend development, building digital experiences
+            and discovering how technology can turn ideas into reality.
+        </p>
+
+        <a href="#skills" class="btn btn-green mt-3">
+            Explore My Skills
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT MY TECH JOURNEY -->
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <img src="images/coding-workspace.jpg"
+                    alt="Frontend development workspace"
+                    class="journey-img shadow">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <p class="text-success fw-bold text-uppercase">
+                    About My Journey
+                </p>
+
+                <h2 class="section-title">
+                    From Curiosity to Building for the Web
+                </h2>
+
+                <p>
+                    My journey into technology started with a desire
+                    to explore new skills and understand how websites
+                    and digital experiences are created.
+                </p>
+
+                <p>
+                    I began learning frontend development and gradually
+                    built my foundation in HTML, CSS and Bootstrap.
+                    What started as an interest has grown into a
+                    continuous learning journey.
+                </p>
+
+                <p>
+                    I enjoy turning ideas into webpages, experimenting
+                    with layouts and learning how to make websites
+                    responsive and user-friendly.
+                </p>
+
+                <p class="fw-semibold highlight">
+                    I am building my skills one project at a time
+                    and looking forward to growing further in tech.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section class="section-padding bg-white" id="skills">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                My Technical Foundation
+            </p>
+
+            <h2 class="section-title">
+                Technologies & Skills
+            </h2>
+
+            <p class="section-subtitle">
+                The tools and technologies I have been learning
+                and using to build websites and digital projects.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- HTML -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="skill-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-filetype-html"></i>
+                    </div>
+
+                    <h5 class="fw-bold">HTML5</h5>
+
+                    <p class="text-muted">
+                        Building the structure and content of
+                        webpages using semantic HTML elements.
+                    </p>
+
+                    <span class="badge bg-success">
+                        Frontend Development
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CSS -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="skill-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-filetype-css"></i>
+                    </div>
+
+                    <h5 class="fw-bold">CSS3</h5>
+
+                    <p class="text-muted">
+                        Styling webpages, working with layouts,
+                        colours, spacing and responsive design.
+                    </p>
+
+                    <span class="badge bg-success">
+                        Frontend Development
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOTSTRAP -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="skill-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-bootstrap"></i>
+                    </div>
+
+                    <h5 class="fw-bold">Bootstrap</h5>
+
+                    <p class="text-muted">
+                        Using Bootstrap components and its grid
+                        system to create responsive web layouts.
+                    </p>
+
+                    <span class="badge bg-success">
+                        CSS Framework
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESPONSIVE DESIGN -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="skill-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-phone"></i>
+                    </div>
+
+                    <h5 class="fw-bold">Responsive Design</h5>
+
+                    <p class="text-muted">
+                        Creating layouts that adapt to different
+                        screen sizes, including phones, tablets
+                        and desktop computers.
+                    </p>
+
+                    <span class="badge bg-success">
+                        Design Practice
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- VS CODE -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="skill-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+
+                    <h5 class="fw-bold">Visual Studio Code</h5>
+
+                    <p class="text-muted">
+                        Using VS Code as my development environment
+                        for writing, organising and editing code.
+                    </p>
+
+                    <span class="badge bg-success">
+                        Development Tool
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTINUOUS LEARNING -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="skill-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+
+                    <h5 class="fw-bold">Problem Solving</h5>
+
+                    <p class="text-muted">
+                        Practising how to approach coding challenges,
+                        troubleshoot issues and improve my projects.
+                    </p>
+
+                    <span class="badge bg-success">
+                        Developing Skill
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TRAINING -->
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                Learning & Development
+            </p>
+
+            <h2 class="section-title">
+                My Technology Training
+            </h2>
+
+            <p class="section-subtitle">
+                Training opportunities that have contributed
+                to my learning and development in technology.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- GESP -->
+            <div class="col-lg-4">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-award"></i>
+                    </div>
+
+                    <h5>
+                        Girls Education and Skills Partnership
+                    </h5>
+
+                    <p class="text-success fw-semibold">
+                        Yaba College of Technology
+                    </p>
+
+                    <p>
+                        Completed the Girls Education and Skills
+                        Partnership programme sponsored by UNICEF.
+                    </p>
+
+                    <p>
+                        I was recognised as one of the outstanding
+                        students and received a laptop in recognition
+                        of my performance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- TECHCRUSH -->
+            <div class="col-lg-4">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+
+                    <h5>Techcrush</h5>
+
+                    <p class="text-success fw-semibold">
+                        Frontend Development Training
+                    </p>
+
+                    <p>
+                        Further developed my interest in technology
+                        through frontend development training and
+                        practical learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- TS ACADEMY -->
+            <div class="col-lg-4">
+
+                <div class="training-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+
+                    <h5>TS Academy</h5>
+
+                    <p class="text-success fw-semibold">
+                        Frontend Development Training
+                    </p>
+
+                    <p>
+                        Continued building my frontend development
+                        knowledge through structured learning
+                        and practical exercises.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section class="section-padding bg-white" id="projects">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                Learning Through Practice
+            </p>
+
+            <h2 class="section-title">
+                Projects & Practical Work
+            </h2>
+
+            <p class="section-subtitle">
+                I believe the best way to improve as a developer
+                is to keep building, experimenting and learning
+                from each project.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- PORTFOLIO -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card">
+
+                    <img src="images/portfolio-preview.jpg"
+                        alt="Personal portfolio website">
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success mb-2">
+                            Personal Project
+                        </span>
+
+                        <h5>Personal Portfolio Website</h5>
+
+                        <p class="text-muted">
+                            A personal website created to showcase
+                            my background, skills, aquaculture
+                            experience, product innovations and
+                            professional journey.
+                        </p>
+
+                        <p class="small fw-semibold text-success">
+                            HTML | CSS | Bootstrap
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AGRI HUB -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card">
+
+                    <img src="images/agri-hub-preview.jpg"
+                        alt="Dassy's Agri-Hub website">
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success mb-2">
+                            Business Website
+                        </span>
+
+                        <h5>Dassy's Agri-Hub</h5>
+
+                        <p class="text-muted">
+                            A website project for an agribusiness
+                            concept focused on fresh fish, processed
+                            fish products, crops, consultancy and
+                            training services.
+                        </p>
+
+                        <p class="small fw-semibold text-success">
+                            HTML | CSS | Bootstrap
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRACTICE PROJECTS -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card">
+
+                    <img src="images/web-design-practice.jpg"
+                        alt="Website development practice">
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success mb-2">
+                            Learning Project
+                        </span>
+
+                        <h5>Frontend Practice Projects</h5>
+
+                        <p class="text-muted">
+                            Small website exercises and design
+                            experiments that help me practise
+                            layouts, Bootstrap components and
+                            responsive webpages.
+                        </p>
+
+                        <p class="small fw-semibold text-success">
+                            HTML | CSS | Bootstrap
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MY APPROACH -->
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <img src="images/coding-workspace.jpg"
+                    alt="Learning frontend development"
+                    class="journey-img shadow">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <p class="text-success fw-bold text-uppercase">
+                    My Learning Approach
+                </p>
+
+                <h2 class="section-title">
+                    Building, Practising & Improving
+                </h2>
+
+                <p>
+                    I enjoy learning by doing. Rather than only
+                    studying concepts, I try to apply what I learn
+                    by building webpages and working on practical
+                    projects.
+                </p>
+
+                <p>
+                    I also enjoy coding challenges because they
+                    encourage me to think through problems and
+                    become more confident in my abilities.
+                </p>
+
+                <p>
+                    I understand that becoming a good developer
+                    takes consistency, patience and a willingness
+                    to keep learning.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FUTURE GOALS -->
+<section class="section-padding bg-white">
+
+    <div class="container">
+
+        <div class="future-box">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-8">
+
+                    <p class="text-success fw-bold text-uppercase">
+                        What's Next?
+                    </p>
+
+                    <h2 class="section-title">
+                        Growing Beyond the Basics
+                    </h2>
+
+                    <p class="mb-0">
+                        My next step is to strengthen my frontend
+                        development foundation, explore JavaScript
+                        and modern frontend frameworks, and build
+                        more functional and interactive web projects.
+                        I am excited about the opportunities that
+                        technology offers and committed to improving
+                        through consistent practice.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 text-lg-end">
+
+                    <i class="bi bi-rocket-takeoff"
+                        style="font-size: 90px; color: var(--green);"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="cta text-center">
+
+    <div class="container">
+
+        <h2 class="fw-bold">
+            Let's Connect
+        </h2>
+
+        <p class="mt-3 mb-4">
+            I am open to learning opportunities, collaborations,
+            frontend development projects and professional connections.
+        </p>
+
+        <a href="contact.html" class="btn btn-green">
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="text-center">
+
+    <div class="container">
+
+        <p class="mb-1">
+            &copy; 2026 Dasola Olanipekun. All Rights Reserved.
+        </p>
+
+        <small class="text-white-50">
+            Technology | Frontend Development | Continuous Learning
+        </small>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

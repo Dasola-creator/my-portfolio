@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dasola Olanipekun | Food Innovation</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0b1f33;
+            --green: #198754;
+            --mint: #20c997;
+            --light-green: #e9f5ef;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--background);
+            color: #333;
+        }
+
+        .navbar {
+            background: var(--navy);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            margin-left: 12px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--mint) !important;
+        }
+
+        .hero {
+            background: linear-gradient(
+                rgba(11, 31, 51, 0.82),
+                rgba(11, 31, 51, 0.82)
+            ), url("images/innovation-banner.jpg") center/cover no-repeat;
+            color: white;
+            padding: 120px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        .section-padding {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: #6c757d;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .highlight {
+            color: var(--green);
+        }
+
+        .product-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .product-card .card-body {
+            padding: 24px;
+        }
+
+        .product-card h5 {
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            background: var(--light-green);
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 28px;
+            height: 100%;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+        }
+
+        .feature-box i {
+            font-size: 30px;
+            color: var(--green);
+        }
+
+        .training-section {
+            background: var(--light-green);
+        }
+
+        .training-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .btn-green {
+            background: var(--green);
+            color: white;
+            padding: 11px 25px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 6px;
+        }
+
+        .btn-green:hover {
+            background: #146c43;
+            color: white;
+        }
+
+        .cta {
+            background: var(--navy);
+            color: white;
+            padding: 70px 0;
+        }
+
+        footer {
+            background: #061522;
+            color: white;
+            padding: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-padding {
+                padding: 55px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            Dasola Olanipekun
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="aquaculture.html">Aquaculture</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="innovation.html">Innovation</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="training.html">Training</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Technology.html">Technology</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<header class="hero text-center">
+    <div class="container">
+
+        <p class="text-uppercase fw-bold text-success">
+            Creativity • Experimentation • Value Addition
+        </p>
+
+        <h1>Turning Fish Into Something More</h1>
+
+        <p class="lead mx-auto mt-3" style="max-width: 750px;">
+            Exploring creative ways to transform fish into
+            exciting food products through product development,
+            experimentation and value addition.
+        </p>
+
+        <a href="#products" class="btn btn-green mt-3">
+            Explore My Products
+        </a>
+
+    </div>
+</header>
+
+
+<!-- INTRODUCTION -->
+<section class="section-padding">
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+                <img src="images/wrapped fish roll.jpeg"
+                    alt="Fish-based food product"
+                    class="img-fluid rounded shadow">
+            </div>
+
+            <div class="col-lg-6">
+
+                <p class="text-success fw-bold text-uppercase">
+                    The Idea Behind My Work
+                </p>
+
+                <h2 class="section-title">
+                    More Than Fish Production
+                </h2>
+
+                <p>
+                    My interest in aquaculture goes beyond producing
+                    fish. I am equally interested in exploring how fish
+                    can be processed and transformed into different
+                    food products.
+                </p>
+
+                <p>
+                    This interest inspired me to experiment with
+                    different ingredients and food preparation methods
+                    to create products that bring together nutrition,
+                    creativity and convenience.
+                </p>
+
+                <p>
+                    From fish cookies to soy fish pie and fish-based
+                    snacks, I enjoy exploring possibilities that make
+                    fish more versatile and introduce it in familiar
+                    and interesting ways.
+                </p>
+
+                <p class="fw-semibold highlight">
+                    I believe there is more to discover in the
+                    aquaculture value chain, especially through
+                    fish processing and product innovation.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="section-padding bg-white" id="products">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                Product Development
+            </p>
+
+            <h2 class="section-title">
+                Products I've Worked On
+            </h2>
+
+            <p class="section-subtitle">
+                A collection of fish-based products developed through
+                experimentation and an interest in value addition.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- FISH COOKIES -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+
+                    <img src="images/fish cookies.jpeg"
+                        alt="Fish cookies">
+
+                    <div class="card-body">
+                        <h5>Fish Cookies</h5>
+
+                        <p class="text-muted">
+                            A creative way of incorporating fish into
+                            baked snacks, exploring new possibilities
+                            beyond conventional cookie ingredients.
+                        </p>
+
+                        <span class="badge bg-success">
+                            Baked Product
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- SOY FISH PIE -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+
+                    <img src="images/soy fish pie.jpeg"
+                        alt="Soy fish pie">
+
+                    <div class="card-body">
+                        <h5>Soy Fish Pie</h5>
+
+                        <p class="text-muted">
+                            An innovative pastry concept combining
+                            fish and soy-based ingredients to explore
+                            alternative food combinations.
+                        </p>
+
+                        <span class="badge bg-success">
+                            Fish & Soy Innovation
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- FISH CRACKERS -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+
+                    <img src="images/fish crackers.jpeg"
+                        alt="Fish crackers">
+
+                    <div class="card-body">
+                        <h5>Fish Crackers</h5>
+
+                        <p class="text-muted">
+                            A fish-based snack inspired by prawn
+                            crackers, exploring another way to enjoy
+                            fish as a snack product.
+                        </p>
+
+                        <span class="badge bg-success">
+                            Snack Innovation
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- FISH KILISHI -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+
+                    <img src="images/fish kilishi.jpeg"
+                        alt="Fish kilishi">
+
+                    <div class="card-body">
+                        <h5>Fish Kilishi</h5>
+
+                        <p class="text-muted">
+                            A fish-based variation of the popular
+                            kilishi snack, exploring the use of fish
+                            in familiar local food products.
+                        </p>
+
+                        <span class="badge bg-success">
+                            Value Addition
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- FISH FILLET -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+
+                    <img src="images/fillets.JPG"
+                        alt="Fish fillets">
+
+                    <div class="card-body">
+                        <h5>Fish Fillets</h5>
+
+                        <p class="text-muted">
+                            Convenient fish cuts that offer consumers
+                            different ways to prepare and enjoy fish.
+                        </p>
+
+                        <span class="badge bg-success">
+                            Fish Processing
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- SMOKED CATFISH -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+
+                    <img src="images/fresh fish.jpeg"
+                        alt="Fish processing">
+
+                    <div class="card-body">
+                        <h5>Fish Processing & Preservation</h5>
+
+                        <p class="text-muted">
+                            Exploring fish processing and preservation
+                            as ways of extending product usability
+                            and adding value to harvested fish.
+                        </p>
+
+                        <span class="badge bg-success">
+                            Processing
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MY APPROACH -->
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                How I Approach Innovation
+            </p>
+
+            <h2 class="section-title">
+                Creativity Meets Practical Learning
+            </h2>
+
+            <p class="section-subtitle">
+                My product development journey is driven by curiosity,
+                experimentation and the desire to explore new uses for fish.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-box">
+                    <i class="bi bi-lightbulb"></i>
+
+                    <h5 class="fw-bold mt-3">
+                        Exploring Ideas
+                    </h5>
+
+                    <p class="text-muted">
+                        Looking at familiar food products and thinking
+                        about how fish can be incorporated into them.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-box">
+                    <i class="bi bi-flask"></i>
+
+                    <h5 class="fw-bold mt-3">
+                        Experimentation
+                    </h5>
+
+                    <p class="text-muted">
+                        Trying different ingredients, combinations
+                        and preparation methods to develop products.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-box">
+                    <i class="bi bi-arrow-repeat"></i>
+
+                    <h5 class="fw-bold mt-3">
+                        Continuous Improvement
+                    </h5>
+
+                    <p class="text-muted">
+                        Learning from each attempt and identifying
+                        opportunities to improve product quality
+                        and presentation.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- TRAINING EXPERIENCE -->
+<section class="section-padding training-section">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <p class="text-success fw-bold text-uppercase">
+                    Sharing What I Know
+                </p>
+
+                <h2 class="section-title">
+                    Fish Cookie Production Training at LASU
+                </h2>
+
+                <p>
+                    In September 2025, I facilitated a fish-cookie
+                    production training for university students from
+                    different parts of Nigeria during an aquaculture
+                    event at Lagos State University (LASU).
+                </p>
+
+                <p>
+                    The session provided an opportunity to demonstrate
+                    how fish can be incorporated into baked products
+                    and to share practical knowledge about fish
+                    value addition.
+                </p>
+
+                <p>
+                    It was a meaningful experience that strengthened
+                    my interest in teaching, practical demonstrations
+                    and sharing ideas within the aquaculture sector.
+                </p>
+
+                <a href="training.html" class="btn btn-green mt-2">
+                    Explore My Training Experience
+                </a>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <img src="images/training 1.jpeg"
+                    alt="Fish cookie production training"
+                    class="training-img shadow">
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MORE PRODUCT PHOTOS -->
+<section class="section-padding bg-white">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="text-success fw-bold text-uppercase">
+                Behind the Products
+            </p>
+
+            <h2 class="section-title">
+                A Glimpse Into My Work
+            </h2>
+
+            <p class="section-subtitle">
+                Some moments from my fish processing and
+                product development activities.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <img src="images/carry chin chin.jpeg"
+                    alt="Fish product"
+                    class="gallery-img shadow-sm">
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <img src="images/wrapped fish roll.jpeg"
+                    alt="Fish roll"
+                    class="gallery-img shadow-sm">
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <img src="images/fish skin chips.jpeg"
+                    alt="Fish skin chips"
+                    class="gallery-img shadow-sm">
+            </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+
+            <a href="gallery.html" class="btn btn-outline-success">
+                View Full Gallery
+                <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FUTURE DIRECTION -->
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <img src="images/feed formulation.jpeg"
+                    alt="Food and product development"
+                    class="img-fluid rounded shadow">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <p class="text-success fw-bold text-uppercase">
+                    Looking Ahead
+                </p>
+
+                <h2 class="section-title">
+                    More Ideas. More Possibilities.
+                </h2>
+
+                <p>
+                    I am interested in continuing to explore fish
+                    product development, ingredient innovation and
+                    opportunities within the aquaculture value chain.
+                </p>
+
+                <p>
+                    I look forward to learning from new experiences,
+                    improving existing products and collaborating
+                    with people and organisations who share an
+                    interest in food innovation and sustainable
+                    aquaculture.
+                </p>
+
+                <p class="fw-semibold highlight">
+                    For me, innovation starts with asking:
+                    "What else can we create with fish?"
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CONTACT CTA -->
+<section class="cta text-center">
+
+    <div class="container">
+
+        <h2 class="fw-bold">
+            Let's Explore New Possibilities Together
+        </h2>
+
+        <p class="mt-3 mb-4">
+            Interested in fish product development, aquaculture,
+            training or collaboration? I would love to connect.
+        </p>
+
+        <a href="contact.html" class="btn btn-green">
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="text-center">
+
+    <div class="container">
+
+        <p class="mb-1">
+            &copy; 2026 Dasola Olanipekun. All Rights Reserved.
+        </p>
+
+        <small class="text-white-50">
+            Aquaculture | Food Innovation | Creativity
+        </small>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
